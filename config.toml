@@ -1,4 +1,52 @@
 baseURL = "http://example.org/"
-languageCode = "en-us"
+languageCode = "de-DE"
 title = "Mein erstes Hugo Projekt"
 theme = "beautifulhugo"
+
+[permalinks]
+  post = "/:section/:year/:month/:weekdayname/:title/"
+  
+[[menu.main]]
+    name = "Home"
+    url = ""
+    weight = 10
+
+[[menu.main]]
+    name = "Tags"
+    url = "tags"
+    weight = 20
+
+[[menu.main]]
+    name = "About"
+    url = "page/about/"
+    weight = 90
+
+[[menu.main]]
+    identifier = "it40"
+    name = "IT 4.0"
+    pre = "<i class='fa fa-heart'></i>"
+    weight = 30
+
+[[menu.main]]
+    identifier = "samples"
+    name = "Samples"
+    weight = 80
+
+[[menu.main]]
+    parent = "samples"
+    name = "Big Image Sample"
+    url = "post/2017-03-07-bigimg-sample"
+    weight = 1
+
+[[menu.main]]
+    parent = "samples"
+    name = "Math Sample"
+    url = "post/2017-03-05-math-sample"
+    weight = 2
+
+[[menu.main]]
+    parent = "samples"
+    name = "Code Sample"
+    url = "post/2016-03-08-code-sample"
+    weight = 3
+
