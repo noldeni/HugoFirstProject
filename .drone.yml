@@ -1,3 +1,4 @@
+---
 kind: pipeline
 name: default
 
@@ -29,3 +30,4 @@ steps:
     event:
       exclude:
       - pull_request
+...
