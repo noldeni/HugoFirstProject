@@ -1,0 +1,31 @@
+kind: pipeline
+name: default
+
+steps:
+- name: build
+  image: plugins/hugo
+  settings:
+    hugo_version: 0.55
+    pull: always
+    url: http://www.nolden.org/blog/
+    validate: true
+
+- name: deploy
+  image: appleboy/drone-scp
+  settings:
+    host: 
+      from_secret: scp-host
+    target: www/nolden/blog/
+    source: public/*
+    username:
+      from_secret: scp-user
+    password:
+      from_secret: scp-pass
+    port:
+      from_secret: scp-port
+  when:
+    branch:
+    - master
+    event:
+      exclude:
+      - pull_request
